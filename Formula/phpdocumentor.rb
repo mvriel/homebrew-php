@@ -12,6 +12,7 @@ class Phpdocumentor < Formula
   depends_on PharRequirement
 
   def install
+    mv "phpDocumentor-2.2.0.phar", "phpDocumentor.phar"
     libexec.install "phpDocumentor.phar"
     sh = libexec + "phpdoc"
     sh.write("#!/usr/bin/env bash\n\n/usr/bin/env php -d allow_url_fopen=On -d detect_unicode=Off #{libexec}/phpDocumentor.phar $*")
